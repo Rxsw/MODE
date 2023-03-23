@@ -23,7 +23,6 @@ def get_args():
     parser.add_argument("--model", default="resnet18", type=str)
     parser.add_argument("--dataset", default="minidomainnet", type=str)
     parser.add_argument("--test_index", default=1, type=int)
-    parser.add_argument("--model", default="resnet18", type=str)
     # Adversarial Exploration Settings
     parser.add_argument("--mode", default="A", type=str, help="F or A")
     parser.add_argument("--move_step", default=10, type=int)
