@@ -295,12 +295,12 @@ class MODE_F:
         # calc abs and pha
         x_fft_abs, x_fft_pha = torch.abs(x_fft).detach(), torch.angle(x_fft).detach()
         # create set of abs and abs of random index, total num_mix
-        if num_mix == 4:
-            fft_set = torch.cat([x_fft_abs.unsqueeze(1)]+[self.shuffle_data_chose_domain(x_fft_abs, domain, idx).unsqueeze(1) for idx in range(3)], dim=1).detach()
-        elif num_mix == 7:
-            fft_set = torch.cat([x_fft_abs.unsqueeze(1)]+[self.shuffle_data_chose_domain(x_fft_abs, domain, idx).unsqueeze(1) for idx in range(3)]+[self.shuffle_data_chose_domain(x_fft_abs, domain, idx).unsqueeze(1) for idx in range(3)], dim=1).detach()
-        else:
-            fft_set = torch.cat([x_fft_abs.unsqueeze(1)]+[self.shuffle_data(x_fft_abs).unsqueeze(1) for _ in range(num_mix-1)], dim=1).detach()
+#         if num_mix == 4:
+#             fft_set = torch.cat([x_fft_abs.unsqueeze(1)]+[self.shuffle_data_chose_domain(x_fft_abs, domain, idx).unsqueeze(1) for idx in range(3)], dim=1).detach()
+#         elif num_mix == 7:
+#             fft_set = torch.cat([x_fft_abs.unsqueeze(1)]+[self.shuffle_data_chose_domain(x_fft_abs, domain, idx).unsqueeze(1) for idx in range(3)]+[self.shuffle_data_chose_domain(x_fft_abs, domain, idx).unsqueeze(1) for idx in range(3)], dim=1).detach()
+#         else:
+        fft_set = torch.cat([x_fft_abs.unsqueeze(1)]+[self.shuffle_data(x_fft_abs).unsqueeze(1) for _ in range(num_mix-1)], dim=1).detach()
         # init weight
         ori_weight = torch.ones((x_fft.size(0), num_mix), device=self.device) / num_mix
         # random init
