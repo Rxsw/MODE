@@ -1,6 +1,11 @@
+This repo provides a demo for the ICML 2023 paper "Moderately Distributional Exploration for Domain Generalization" on the PACS dataset.
+
+
 # MODE
 
-Download decoder.pth and vgg_normalised.pth from https://github.com/naoto0804/pytorch-AdaIN 
+Please download the PACS dataset from http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017 .
+
+Please download decoder.pth and vgg_normalised.pth from https://github.com/naoto0804/pytorch-AdaIN .
 
 main.py is designed for single GPU, and ddp.py is designed for multi-GPU parallelism (currently only for DomainNet). 
 
