@@ -40,3 +40,5 @@ or
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 ddp.py --batch-size 256 --mode A --test_index 2
 ```
+
+Change test_index to determine which domain is the target domain in leave one domain out strategy. 
