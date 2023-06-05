@@ -11,6 +11,7 @@ Please download resnet18-5c106cde.pth form https://download.pytorch.org/models/r
 
 Place these downloads in the following directory:
 
+```
 MODE/
 |--data/
 |  |--resnet18-5c106cde.pth
@@ -25,6 +26,7 @@ MODE/
 |--ddp.py
 |--main.py
 
+```
 
 NOTE: main.py is designed for single GPU, and ddp.py is designed for multi-GPU parallelism (currently only for DomainNet). 
 
